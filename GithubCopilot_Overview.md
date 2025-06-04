@@ -210,3 +210,87 @@ Before we explore specific strategies, let's first understand the basic principl
     * IDE limitations: In some integrated development environments (IDEs), content exclusions might not apply when you're using certain features, such as Copilot Chat. For example, in Visual Studio Code and Visual Studio, content exclusions are not applied when you use the @github chat participant in your question.
     * Semantic information: Copilot might still use semantic information from an excluded file if the IDE provides the information in a nonexcluded file. This includes type information and hover-over definitions for symbols or function calls used in code.
     * Policy scope: Content exclusion settings apply only to members of the organization in which you configure the content exclusion. Anyone else who can access the specified files can still see code completion suggestions and Copilot Chat responses referencing the specified files.
+
+* After you add or change content exclusions, the changes can take up to 30 minutes to take effect in IDEs where the settings are already loaded. To apply changes immediately, reload the content exclusion settings in your IDE.
+
+* Check the GitHub Copilot icon on the status bar. If a GitHub Copilot content exclusion applies to the file, the GitHub Copilot icon has a diagonal line through it. Hover over the icon to see whether an organization or the parent repository disabled GitHub Copilot for the file.
+-----
+# Align with developer preferences
+* Code generation and completion
+    * Multiple suggestions
+    * Language-specific idioms
+* Writing unit tests and documentation
+    * Test case generation
+    * Documentation stubs
+    * Comment expansion
+* Code refactoring
+    * Pattern recognition
+    * Modern syntax suggestions
+    * Consistency maintenance
+* Debugging assistance
+    * Error explanation
+    * Log statement generation
+    * Test case suggestions: For bugs that are difficult to reproduce, GitHub Copilot can suggest additional test cases that might help isolate the issue.
+* Data science support
+    * Statistical functions
+    * Data visualization
+    * Data preprocessing
+    * Model evaluation
+* **AI in the Software Development Lifecycle (SDLC)**
+    * Requirement analysis
+        * Rapid prototyping: Quickly generate code snippets based on high-level descriptions
+        * User story implementation
+        * API design: Suggest API structures based on described functionality
+    * Design & development
+        * Boilerplate code generation
+        * Design pattern implementation
+        * Code optimization
+        * Cross-language translation
+    * Testing & quality assurance
+        * Unit test creation
+        * Test data generation
+        * Edge case identification
+        * Assertion suggestions
+    * Deployment
+        * Configuration file generation
+        * Deployment script assistance
+        * Documentation updates
+    * Maintenance & support
+        * Bug fix suggestions
+        * Code refactoring
+        * Documentation updates
+        * Legacy code understanding
+* **Identify limitations of GitHub Copilot**
+    * Code quality and correctness
+        * Potential for errors
+        * Security concerns
+        * Context misinterpretation
+    * Language and framework specificity
+        * Varying performance: for different languages
+        * Niche technologies: For less common or newer technologies, suggestions may be less accurate or relevant.
+    * Dependency on training data
+        * Bias suggestions
+        * Copyright concerns: There's ongoing debate about the copyright implications of code generated from trained models.
+    * Complex problem solving
+        * Limitation in high-level design
+        * Creativity constraints: While helpful, GitHub Copilot cannot replace human creativity in solving novel problems.
+
+* **Measure productivity gains**
+    * GitHub provides a **REST API to access GitHub Copilot usage metrics** for enterprise members, teams, and organization members. These metrics offer insights into daily usage of GitHub Copilot, including completions, chat interactions, and user engagement across different editors and languages.
+        * Get a summary of GitHub Copilot usage for enterprise members `Endpoint: GET /enterprises/{enterprise}/GitHub Copilot/usage`
+        * Get a summary of GitHub Copilot usage for an enterprise team `Endpoint: GET /enterprises/{enterprise}/team/{team_slug}/GitHub Copilot/usage`
+        * Get a summary of GitHub Copilot usage for organization members `Endpoint: GET /orgs/{org}/GitHub Copilot/usage`
+
+* **Implementing a measurement framework**
+To systematically assess GitHub Copilot's impact, consider the following framework, using the GitHub Copilot usage metric API at each stage:
+
+    * **Evaluation**: During the initial phase of adopting GitHub Copilot, focus on leading indicators such as developer satisfaction and task completion rates. Use the API to collect metrics like **Average Daily Active Users, Total Acceptance Rate, and Lines of Code Accepted**
+    * **Adoption**: As GitHub Copilot becomes more integrated into your team's workflow, continue to **monitor productivity metrics and enablement indicators**. The API can provide insights into user engagement and identify areas where further training may be needed.
+    * **Optimization**: Once GitHub Copilot is fully adopted, use the REST API for GitHub Copilot usage metrics to **fine-tune its impact on broader organizational goals**, such as reducing time-to-market or improving code quality across the team.
+    * **Sustained efficiency**: Continuously evaluate GitHub Copilot's effectiveness as your organization evolves. The API allows for ongoing monitoring and adjustment to ensure long-term productivity gains.
+
+* Short-form survey: Can be conducted every two weeks if frequent feedback is needed, especially when coupled with other feedback channels like online or in-person discussions.
+* Long-form survey: Recommended to be conducted no more than once every four weeks, particularly at the end of the evaluation and adoption stages, to capture comprehensive feedback.
+* Analyzing survey results
+    * Privacy considerations: Ensure that survey responses are anonymized and cannot be traced back to individual developers, meeting privacy obligations.
+    * Data tracking: Collate the survey responses into existing Business Intelligence (BI) tools or spreadsheets for ease of analysis. Over time, track the results to identify trends and make informed decisions about GitHub Copilot's implementation.
