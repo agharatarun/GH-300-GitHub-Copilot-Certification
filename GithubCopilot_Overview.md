@@ -184,14 +184,9 @@ Before we explore specific strategies, let's first understand the basic principl
     * Feedback mechanism: ``Rate response`` option
     * **Data handling**: GitHub Copilot CLI doesn't retain your prompts, but it keeps your usage analytics. You can configure whether you want GitHub Copilot to keep and use your usage data to improve the product. Enter the command ``gh copilot config`` , select ``Optional Usage Analytics``, then select ``No`` if you want to opt out.
 
+![alt text](image-2.png)
 
-| Feature | Free & Pro | Business | Enterprise |
-| ---------- | ---------- | --------- | --------- |
-| Tailor chat conversations to your private codebase | ❌ | ❌ | ✅ |
-| Unlimited integrations with Copilot Extensions (public beta) | ✅ | ✅ | ✅ |
-| Build a private extension for internal tooling (public beta) | ✅ | ✅ | ✅ |
-| Attach knowledge bases to chat for organizational context | ❌ | ❌ | ✅ |
-
+![alt text](image-3.png)
 
 * Contractual protections
     * IP indemnity: The GitHub Copilot Business and Enterprise plans include IP indemnity, which provides legal protection against intellectual property claims related to the use of Copilot suggestions. With IP indemnity, if any suggestion from GitHub Copilot is challenged as infringing on third-party IP rights, GitHub assumes legal responsibility. **For GitHub to assume legal responsibility, the Matching public code setting must be blocked.**
@@ -294,3 +289,67 @@ To systematically assess GitHub Copilot's impact, consider the following framewo
 * Analyzing survey results
     * Privacy considerations: Ensure that survey responses are anonymized and cannot be traced back to individual developers, meeting privacy obligations.
     * Data tracking: Collate the survey responses into existing Business Intelligence (BI) tools or spreadsheets for ease of analysis. Over time, track the results to identify trends and make informed decisions about GitHub Copilot's implementation.
+-----
+Develop unit tests using GitHub Copilot tools
+* Set up your testing framework
+    * chat view: Enter the ``/setupTests`` or ``/fixTestFailure`` command
+* You can generate unit tests using the following GitHub Copilot tools:
+    * Chat view: Use the Chat view generate unit tests for a project, class, or method using Ask, Edit, or Agent mode.* Inline Chat: Use Inline Chat to generate unit tests for selected classes or methods.
+    * Smart actions: Use the Generate Tests smart action to generate unit tests for selected code without writing a prompt.
+    * Code line completions: Use code line completions to suggest addition unit tests for an existing test case.
+
+* Maintain consistency: generates tests by providing custom instructions. For example:
+    * Specify preferred testing frameworks
+    * Define naming conventions for tests
+    * Set code structure preferences
+    * Request specific test patterns or methodologies
+
+*For example: ``/tests Generate unit tests for this method. Validate both success and failure, and include edge cases.``
+
+* GitHub Copilot Chat uses your code's context and semantics to suggest assertions that ensure the function is working correctly. It also helps you write test cases for edge cases and boundary conditions that might be difficult to identify manually. For example, GitHub Copilot Chat can suggest test cases for error handling, null values, or unexpected input types.
+
+*The Chat view in Visual Studio Code provides three modes that can be used to create unit tests: Ask, Edit, and Agent.
+    * The ask mode is optimized for asking questions about your code projects, coding topics, and general technology concepts.
+        * The ask mode can be used to analyze a workspace and then create unit tests. The ask mode is useful when you want to create tests for **multiple functions or methods in a file**, or when you want to create tests for an entire file.
+        * For example: ``@workspace /explain I need to create unit tests for the code in this file. The tests should be written in Python and use the unittest framework.``
+    * The edit mode is optimized for making edits across multiple files in your codebase.
+        * The edit mode can be used to create unit tests by adding context files to the chat and then creating or updating test files. The edit mode is useful when you want to create tests for **specific functions or methods in a file**, or when you want to create tests for an entire file.
+        * For example: ``I need to create unit tests for the code in this file. The tests should be written in Python and use the unittest framework. Create a test file in the same directory as the code file.``
+    * The agent mode is optimized for starting an agentic coding workflow. When you use the Chat view in agent mode, GitHub Copilot may make multiple premium requests to complete a single task. Premium requests can be used by user-initiated prompts and follow-up actions Copilot takes on your behalf. The total premium requests used depends on the complexity of the task, the number of steps involved, and the model selected.
+        * The agent mode can be used to **automate tasks within your unit testing process**. For example, you can use the agent mode to scaffold a test project, create test files, run tests, generate test reports, or perform other tasks related to unit testing. The agent mode is best for creating unit tests that require a more in-depth understanding of the project.
+        * In agent mode, you don't need to specify the context. Copilot will automatically determine the relevant context and files to edit.
+        * For Example: ``Ensure that a suitable unit tests project is prepared for the selected code file. Create a test file in the unit test project that includes unit tests for all methods in the selected file. Unit tests should be written in C# and use the xUnit framework. Run the tests to ensure expected results.``
+
+-----
+# Introduction to GitHub Copilot Business
+
+![alt text](image.png)
+
+* Developers code faster: In our survey, almost **90% of developers said they completed tasks faster with GitHub Copilot**.
+
+* Developers stay in the flow longer: Of developers that were surveyed, **73% said GitHub Copilot helps them stay in the flow longer** and more easily. It also helped **87% of developers preserve mental energy** when working through repetitive tasks. 
+
+-----
+# Introduction to GitHub Copilot Enterprise
+
+* GitHub Copilot Enterprise Features
+    * Knowledge bases and custom models
+        * Organization owners utilizing GitHub Copilot Enterprise can create customized knowledge bases, bringing together Markdown documentation across one or more repositories, pulling from code snippets, documentation, and other markdown files to help train GitHub Copilot Enterprise to the organization’s specific needs.
+    * Chat customization to your codebase
+        * GitHub Copilot Enterprise allows developers to use GitHub Copilot Chat to create prompts that are customized to your codebase. This feature opens up a world of new possibilities, enabling developers to apply it directly within issues, pull requests, code files within Codespaces, and even directly on repositories.
+    * Pull request summaries
+    * Documentation search and summaries using docsets
+        * Docsets are private custom collections of internal code and documentation tailored to organizations' specific needs and workflows. 
+        * GitHub Copilot Enterprise docset management can answer specific questions about using a particular library or framework, so that you don't have to search the whole docset.
+    * Code review
+
+![alt text](image-1.png)
+
+* To use GitHub Copilot for your enterprise organization, you must have a GitHub Enterprise Cloud account and an existing Copilot for Business subscription.
+
+-----
+# Using GitHub Copilot with JavaScript
+
+* Copilot might suggest multiple options. To cycle through suggestions, use ``Ctrl + Enter`` and select the most appropriate one.
+
+* All GitHub accounts can use Codespaces for up to 60 hours free each month with two core instances. 
