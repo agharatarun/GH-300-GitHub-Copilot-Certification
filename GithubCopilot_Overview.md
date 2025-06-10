@@ -308,7 +308,7 @@ Develop unit tests using GitHub Copilot tools
 
 * GitHub Copilot Chat uses your code's context and semantics to suggest assertions that ensure the function is working correctly. It also helps you write test cases for edge cases and boundary conditions that might be difficult to identify manually. For example, GitHub Copilot Chat can suggest test cases for error handling, null values, or unexpected input types.
 
-*The Chat view in Visual Studio Code provides three modes that can be used to create unit tests: Ask, Edit, and Agent.
+* The Chat view in Visual Studio Code provides three modes that can be used to create unit tests: Ask, Edit, and Agent.
     * The ask mode is optimized for asking questions about your code projects, coding topics, and general technology concepts.
         * The ask mode can be used to analyze a workspace and then create unit tests. The ask mode is useful when you want to create tests for **multiple functions or methods in a file**, or when you want to create tests for an entire file.
         * For example: ``@workspace /explain I need to create unit tests for the code in this file. The tests should be written in Python and use the unittest framework.``
