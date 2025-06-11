@@ -353,3 +353,15 @@ Develop unit tests using GitHub Copilot tools
 * Copilot might suggest multiple options. To cycle through suggestions, use ``Ctrl + Enter`` and select the most appropriate one.
 
 * All GitHub accounts can use Codespaces for up to 60 hours free each month with two core instances. 
+
+-----
+* Copilot Chat in IDEs is available in Visual Studio Code, Visual Studio, JetBrains IDEs, Eclipse, and Xcode.
+* Response times may vary during periods of high usage.
+* Copilot Chat skills in IDEs is available in Visual Studio Code and Visual Studio.
+* Code completion in IDEs is available in Visual Studio Code, Visual Studio, JetBrains IDEs, Azure Data Studio, Xcode, Vim/Neovim, and Eclipse.
+* If you have a GitHub Copilot Enterprise subscription and you have enabled Bing search integration, Copilot Chat in GitHub Mobile may respond using information based on the results of a Bing search. For information on how to enable or disable Bing search integration, see Managing policies and features for Copilot in your enterprise in the GitHub Enterprise Cloud documentation.
+* GitHub Codespaces provides a cloud-based development environment directly in your browser.
+* You can use the audit logs for Copilot Business to review actions taken by users in your organization, such as:
+    * Changes to Copilot settings and policies
+    * The addition or removal of seats from your Copilot Business plan
+    * The audit log lists events related to your Copilot Business plan for the last 180 days.
